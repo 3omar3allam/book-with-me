@@ -19,10 +19,10 @@ export class AppComponent implements OnInit {
     window.onscroll = () => {
       if(this.mobileView){
         if (document.body.scrollTop > 20 || document.documentElement.scrollTop > 20) {
-          document.getElementsByTagName('bwm-header')[0].style.top = '-65px';
+          (document.getElementsByTagName('bwm-header')[0] as HTMLElement).style.top = '-65px';
           document.getElementsByTagName('section')[0].style.top ='60px';
         } else {
-          document.getElementsByTagName('bwm-header')[0].style.top = '0px';
+          (document.getElementsByTagName('bwm-header')[0] as HTMLElement).style.top = '0px';
           document.getElementsByTagName('section')[0].style.top = '150px';
         }
       }
