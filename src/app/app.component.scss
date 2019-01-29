@@ -1,0 +1,12 @@
+bwm-header{
+  position: fixed;
+  top: 0px;
+  transition: top 0.3s;
+  width: 100%;
+  z-index: 999;
+}
+
+section{
+  position:absolute;;
+  overflow: auto;
+}

@@ -1,20 +1,25 @@
-<nav class="navbar navbar-expand-lg navbar-light bg-light">
-  <a class="navbar-brand" href="#">{{title}}</a>
+<nav class="row navbar navbar-expand-lg navbar-light bg-light" id='main-header'>
+  <a class="navbar-brand col-lg-3 col-md-3 col-sm-3 col-8" href="#">{{title}}</a>
 
-  <form class="form-inline ml-auto">
-    <input class="form-control bwm-search mr-sm-2" type="search" placeholder="Search" aria-label="Search">
-    <button class="btn btn-bwm-search my-2 my-sm-0 mx-sm-auto" type="submit">Search</button>
+  <form class="form-inline mx-auto row col-lg-7 col-md-6 col-sm-7 col-12">
+    <!-- <div class='row'> -->
+      <input class="form-control bwm-search col-8" type="search" placeholder="Search" aria-label="Search">
+      <button class="btn btn-bwm-search col-4" type="submit">Search</button>
+    <!-- </div> -->
   </form>
 
-  <button class="navbar-toggler  ml-auto" type="button" data-toggle="collapse" data-target="#navbarNavAltMarkup" aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
+  <a class="btn btn-link mr-auto" href="#">Login <span class="sr-only">(current)</span></a>
+  <a class="btn btn-link ml-auto" href="#">Register</a>
+
+  <button class="navbar-toggler ml-auto col-sm-2 col-2"
+    (click)='toggleNav()'>
     <span class="navbar-toggler-icon"></span>
   </button>
-  <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
-    <div class="navbar-nav ml-auto">
-      <a class="nav-item nav-link active" href="#">Login <span class="sr-only">(current)</span></a>
-      <a class="nav-item nav-link" href="#">Register</a>
-      <!-- <a class="nav-item nav-link" href="#">Pricing</a>
-      <a class="nav-item nav-link disabled" href="#" tabindex="-1" aria-disabled="true">Disabled</a> -->
-    </div>
+
+  <div class='w-100'></div>
+  <div class="navbar-menu ml-auto col-12 col-sm-12 col-md-12" id='navbarOptions'>
+    <a class="nav-item nav-link active" href="#">Login <span class="sr-only">(current)</span></a>
+    <a class="nav-item nav-link" href="#">Register</a>
+    <a class="nav-item nav-link disabled" href="#" tabindex="-1" aria-disabled="true">Disabled</a>
   </div>
 </nav>

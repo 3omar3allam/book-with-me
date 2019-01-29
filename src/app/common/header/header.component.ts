@@ -8,11 +8,19 @@ import { Component, OnInit } from '@angular/core';
 export class HeaderComponent implements OnInit {
 
   title = 'Book With Me';
-  hideButtons = false;
+  showButtons = false;
 
   constructor() { }
 
   ngOnInit() {
+
+
+  }
+
+  toggleNav() {
+    this.showButtons = !this.showButtons
+    document.getElementById('navbarOptions').style.display = this.showButtons? "block":"none"
+    document.getElementById('navbarOptions').style.top = this.showButtons? "0":"-200px"
   }
 
 }

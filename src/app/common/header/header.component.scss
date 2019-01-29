@@ -1,27 +1,74 @@
 @import 'variables';
 
-.navbar {
-  padding: 20px;
-  margin-bottom: 40px;
+@mixin button-actions{
+  background-color: grey;
+  border-color: grey;
+  color: white;
+  text-decoration: none;
+}
 
+.navbar {
+  padding: 15px;
+  margin-bottom: 40px;
+  width:100%;
+
+  .navbar-brand {
+    font-size: 30px;
+    color: $main-color;
+    font-weight: bold;
+  }
+
+  .navbar-toggler{
+    @media only screen and (max-width: 767px){
+      display: inline;
+      position: absolute;
+      max-width: 3rem;
+      top:20px;
+      right:20px;
+      &:hover, &:focus, &:active{
+        @include button-actions;
+      }
+      navbar-toggler-icon{
+        align-self: center;
+      }
+    }
+    @media only screen and (min-width: 768px){
+      display: none;
+    }
+  }
+
+  .btn-link {
+    font-size: 18px;
+    color: $main-text-color;
+
+    @media only screen and (max-width: 767px){
+      display: none
+    }
+    &:hover, &:focus, &:active{
+      @include button-actions;
+    }
+  }
+
+  #navbarOptions{
+    position:relative;
+    top:-250px;
+    width: 90%;
+    margin:auto;
+    display: none;
+    transition: top 1s;
+    .nav-item{
+      width:100%;
+      text-align: center;
+      color: $main-text-color;
+      &:hover, &:focus, &:active{
+        @include button-actions;
+      }
+    }
+  }
 
   .bwm-search {
     height: 50px;
-    width: 300px;
   }
-
-  .navbar-brand {
-    margin-right: 30px;
-    font-size: 30px;
-    letter-spacing: 1px;
-    color: $main-color;
-    font-weight: 500;
-  }
-
-  .nav-item {
-    font-size: 14px;
-  }
-
 
   .btn-bwm-search {
     border-color: $main-color;
