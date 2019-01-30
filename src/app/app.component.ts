@@ -10,20 +10,20 @@ export class AppComponent implements OnInit {
 
   ngOnInit(){
     this.mobileView = (window.innerWidth < 576);
-    document.getElementsByTagName('section')[0].style.top = this.mobileView? '150px': '100px';
+    document.getElementById('main').style.top = this.mobileView? '150px': '100px';
 
     window.onresize = () => {
       this.mobileView = (window.innerWidth < 576);
-      document.getElementsByTagName('section')[0].style.top = this.mobileView? '150px': '100px';
+      document.getElementById('main').style.top = this.mobileView? '150px': '100px';
     }
     window.onscroll = () => {
       if(this.mobileView){
         if (document.body.scrollTop > 20 || document.documentElement.scrollTop > 20) {
           (document.getElementsByTagName('bwm-header')[0] as HTMLElement).style.top = '-65px';
-          document.getElementsByTagName('section')[0].style.top ='60px';
+          document.getElementById('main').style.top ='60px';
         } else {
           (document.getElementsByTagName('bwm-header')[0] as HTMLElement).style.top = '0px';
-          document.getElementsByTagName('section')[0].style.top = '150px';
+          document.getElementById('main').style.top = '150px';
         }
       }
     }
