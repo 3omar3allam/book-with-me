@@ -1,15 +1,15 @@
 <nav class="row navbar navbar-expand-lg navbar-light bg-light" id='main-header'>
-  <a class="navbar-brand col-lg-3 col-md-3 col-sm-3 col-8" href="#">{{title}}</a>
+  <a class="navbar-brand col-lg-3 col-md-3 col-sm-3 col-8" (click)="refresh()">{{title}}</a>
 
   <form class="form-inline mx-auto row col-lg-7 col-md-6 col-sm-7 col-12">
     <!-- <div class='row'> -->
       <input class="form-control bwm-search col-8" type="search" placeholder="Search" aria-label="Search">
-      <button class="btn btn-bwm-search col-4" type="submit">Search</button>
+      <button class="btn btn-bwm-search col-3" type="submit">Search</button>
     <!-- </div> -->
   </form>
 
-  <a class="btn btn-link mr-auto" href="#">Login <span class="sr-only">(current)</span></a>
-  <a class="btn btn-link ml-auto" href="#">Register</a>
+  <a class="btn btn-link mr-auto" routerLink="">Login <span class="sr-only">(current)</span></a>
+  <a class="btn btn-link ml-auto" routerLink="">Register</a>
 
   <button class="navbar-toggler ml-auto col-sm-2 col-2"
     (click)='toggleNav()'>
@@ -18,8 +18,8 @@
 
   <div class='w-100'></div>
   <div class="navbar-menu ml-auto col-12 col-sm-12 col-md-12" id='navbarOptions'>
-    <a class="nav-item nav-link active" href="#">Login <span class="sr-only">(current)</span></a>
-    <a class="nav-item nav-link" href="#">Register</a>
-    <a class="nav-item nav-link disabled" href="#" tabindex="-1" aria-disabled="true">Disabled</a>
+    <a class="nav-item nav-link active" routerLink="">Login <span class="sr-only">(current)</span></a>
+    <a class="nav-item nav-link" routerLink="">Register</a>
+    <a class="nav-item nav-link disabled" routerLink="" tabindex="-1" aria-disabled="true">Disabled</a>
   </div>
 </nav>

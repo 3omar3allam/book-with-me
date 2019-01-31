@@ -1,0 +1,13 @@
+<section id="rentalListing">
+  <h1 class="title">Your Home All Around the World</h1>
+  <div *ngIf="loading" class="d-flex justify-content-center">
+    <div class="spinner-border text-danger" style="width:5rem; height:5rem" role="status">
+      <span class="sr-only">Loading...</span>
+    </div>
+  </div>
+  <div class="row">
+    <div *ngFor='let rental of rentals' class='col-md-3 col-6'>
+      <bwm-rental-list-item *ngIf='!loading' [rental]="rental"></bwm-rental-list-item>
+    </div>
+  </div>
+</section>
