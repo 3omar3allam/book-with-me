@@ -8,14 +8,15 @@
 }
 
 .navbar {
+  margin: 0px 0px 40px 0px;
   padding: 15px;
-  margin-bottom: 40px;
   width:100%;
 
   .navbar-brand {
     font-size: 30px;
     color: $main-color;
     font-weight: bold;
+    cursor: pointer;
   }
 
   .navbar-toggler{
@@ -68,12 +69,14 @@
 
   .bwm-search {
     height: 50px;
+    margin-right: 1px;
   }
 
   .btn-bwm-search {
     border-color: $main-color;
     color: $main-color;
-
+    height: 50px;
+    margin-left: 1px;
 
     &:hover, &:focus, &:active {
       background-color: $main-color;
