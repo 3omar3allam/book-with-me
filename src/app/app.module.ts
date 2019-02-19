@@ -5,6 +5,7 @@ import { RentalModule } from './rental/rental.module';
 
 import { AppComponent } from './app.component';
 import { HeaderComponent } from './common/header/header.component';
+import { HttpClientModule } from '@angular/common/http';
 
 @NgModule({
   declarations: [
@@ -15,6 +16,7 @@ import { HeaderComponent } from './common/header/header.component';
     BrowserModule,
     AppRoutingModule,
     RentalModule,
+    HttpClientModule,
   ],
   providers: [],
   bootstrap: [AppComponent]

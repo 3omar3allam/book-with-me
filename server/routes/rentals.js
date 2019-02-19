@@ -5,7 +5,15 @@ const Rental = require('../models/rental')
 router.get('', (req, res) => {
   Rental.find({}).sort({createdAt:'desc'})
   .then(foundRentals => {
-    res.json(foundRentals);
+    res.json(
+      foundRentals.map(rental => {
+        const {_id, ...rest} = rental.toObject();
+        return {
+          id: _id,
+          ...rest,
+        };
+      })
+    )
   })
   .catch(err => {
     res.status(404).json({
@@ -20,7 +28,11 @@ router.get('', (req, res) => {
 router.get('/:id', (req, res) => {
   Rental.findById(req.params.id)
   .then(foundRental => {
-    res.json(foundRental);
+    const {_id,...rest} = foundRental.toObject();
+    res.json({
+      id: _id,
+      ...rest,
+    });
   })
   .catch(err => {
     res.status(404).json({

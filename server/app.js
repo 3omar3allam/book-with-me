@@ -1,4 +1,5 @@
 const express = require('express');
+const cors = require('cors');
 const mongoose = require('mongoose');
 const FakeDb = require('./fake-db');
 const rentalsRoutes = require('./routes/rentals');
@@ -18,6 +19,7 @@ mongoose.connect(
   });
 
 const app = express();
+app.use(cors());
 
 app.use('/api/rentals', rentalsRoutes);
 
