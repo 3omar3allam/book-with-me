@@ -31,7 +31,7 @@ export class RentalListComponent implements OnInit, OnDestroy {
       );
 
     this.refreshSub = this._commonService.getRefreshListener()
-      .subscribe(_ =>{
+      .subscribe(_ => {
         this.ngOnInit();
       });
   }

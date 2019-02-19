@@ -18,12 +18,12 @@ export class HeaderComponent implements OnInit {
   }
 
   toggleNav() {
-    this.showButtons = !this.showButtons
-    document.getElementById('navbarOptions').style.display = this.showButtons? "block":"none"
-    document.getElementById('navbarOptions').style.top = this.showButtons? "0":"-200px"
+    this.showButtons = !this.showButtons;
+    document.getElementById('navbarOptions').style.display = this.showButtons ? 'block' : 'none';
+    document.getElementById('navbarOptions').style.top = this.showButtons ? '0' : '-200px';
   }
 
-  refresh(){
+  refresh() {
     this._commonService.refresh();
   }
 

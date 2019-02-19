@@ -5,23 +5,22 @@ import { Router } from '@angular/router';
 @Injectable({
   providedIn: 'root'
 })
-export class CommonService{
+export class CommonService {
 
   refreshListener: Subject<boolean>;
 
-  constructor(private _router: Router){
+  constructor(private _router: Router) {
     this.refreshListener = new Subject<boolean>();
   }
 
-  refresh(){
-    if(['/','/rentals'].includes(this._router.url)){
+  refresh() {
+    if (['/', '/rentals'].includes(this._router.url)) {
       this.refreshListener.next(true);
-    }
-    else{
+    } else {
       this._router.navigate(['']);
     }
   }
-  getRefreshListener(){
+  getRefreshListener() {
     return this.refreshListener.asObservable();
   }
 }

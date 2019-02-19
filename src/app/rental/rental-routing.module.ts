@@ -6,11 +6,11 @@ import { RentalDetailsComponent } from './rental-details/rental-details.componen
 
 const routes: Routes = [
   {
-    path: "rentals",
-    component:RentalComponent,
+    path: 'rentals',
+    component: RentalComponent,
     children: [
-      { path: "", component: RentalListComponent},
-      { path: ":rentalId", component: RentalDetailsComponent}
+      { path: '', component: RentalListComponent},
+      { path: ':rentalId', component: RentalDetailsComponent}
     ]
   }
 ];

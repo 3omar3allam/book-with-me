@@ -34,9 +34,9 @@ export class RentalDetailsComponent implements OnInit, OnDestroy {
   }
 
 
-  getRental(rentalId: string){
+  getRental(rentalId: string) {
     this.rentalByIdSub = this._rentalService.getRentalById(rentalId).subscribe(
-      (rental: Rental)=>{
+      (rental: Rental) => {
         this.rental = rental;
         this.loading = false;
       }

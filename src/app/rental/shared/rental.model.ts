@@ -1,4 +1,4 @@
-export class Rental{
+export class Rental {
   id: string;
   title: string;
   city: string;
