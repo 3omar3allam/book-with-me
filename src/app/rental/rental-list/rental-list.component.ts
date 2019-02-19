@@ -17,12 +17,12 @@ export class RentalListComponent implements OnInit, OnDestroy {
   loading: boolean;
 
   constructor(
-    private _rentalService: RentalService,
-    private _commonService: CommonService
+    private rentalService: RentalService,
+    private commonService: CommonService
   ) { }
   ngOnInit() {
     this.loading = true;
-    this.rentalsSub = this._rentalService.getRentals()
+    this.rentalsSub = this.rentalService.getRentals()
       .subscribe(
         (rentals: Rental[]) => {
           this.rentals = rentals;
@@ -30,7 +30,7 @@ export class RentalListComponent implements OnInit, OnDestroy {
         }
       );
 
-    this.refreshSub = this._commonService.getRefreshListener()
+    this.refreshSub = this.commonService.getRefreshListener()
       .subscribe(_ => {
         this.ngOnInit();
       });
