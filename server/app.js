@@ -1,4 +1,5 @@
 const express = require('express');
+const path = require('path');
 const cors = require('cors');
 const mongoose = require('mongoose');
 const FakeDb = require('./fake-db');
@@ -21,6 +22,7 @@ mongoose.connect(
 const app = express();
 app.use(cors());
 
+app.use('', express.static(path.join(__dirname,'templates')));
 app.use('/api/rentals', rentalsRoutes);
 
 const PORT = process.env.PORT || 3000;
