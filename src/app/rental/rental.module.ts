@@ -5,6 +5,8 @@ import { RentalListItemComponent } from './rental-list-item/rental-list-item.com
 import { RentalComponent } from './rental.component';
 import { RentalRoutingModule } from './rental-routing.module';
 import { RentalDetailsComponent } from './rental-details/rental-details.component';
+import { MapComponent } from '../common/map/map.component';
+import { MaterialModule } from '../common/material.module';
 
 @NgModule({
   declarations: [
@@ -12,10 +14,12 @@ import { RentalDetailsComponent } from './rental-details/rental-details.componen
     RentalListComponent,
     RentalListItemComponent,
     RentalDetailsComponent,
+    MapComponent,
   ],
   imports: [
     CommonModule,
-    RentalRoutingModule
+    RentalRoutingModule,
+    MaterialModule,
   ]
 })
 export class RentalModule { }

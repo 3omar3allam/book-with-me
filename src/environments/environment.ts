@@ -4,7 +4,8 @@
 
 export const environment = {
   production: false,
-  API_URL: 'http://localhost:3000/api/'
+  API_URL: 'http://localhost:3000/api/',
+  MAPS_API_KEY: 'AIzaSyCPg7og21Uz7ue9XlHbu2gwkPiO9UugDCc',
 };
 
 /*

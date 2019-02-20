@@ -1,0 +1,5 @@
+<div #gmap [hidden]='!map'></div>
+<div *ngIf='!map'>
+  <p>Loading Map...</p>
+  <mat-progress-bar mode="indeterminate" color='warn'></mat-progress-bar>
+</div

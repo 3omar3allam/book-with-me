@@ -1,88 +1,178 @@
 @import 'variables';
 
 @mixin button-actions{
-  background-color: grey;
-  border-color: grey;
+  background-color: darkgrey;
   color: white;
+  border-radius: 5px;
   text-decoration: none;
 }
 
-.navbar {
-  margin: 0px 0px 40px 0px;
-  padding: 15px;
-  width:100%;
 
-  .navbar-brand {
-    font-size: 30px;
-    color: $main-color;
-    font-weight: bold;
-    cursor: pointer;
+.header-container {
+  display: flex;
+  flex-direction: column;
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+}
+
+.header-mobile .header-toolbar {
+  position: fixed;
+  /* Make sure the toolbar will stay on top of the content as it scrolls past. */
+  z-index: 2;
+}
+
+.header-toolbar{
+  display: flex;
+  .toolbar-section{
+    flex: auto;
+    * {
+      display: inline-block;
+    }
+    mat-icon{
+      color: $main-color;
+      float:right;
+    }
   }
-
-  .navbar-toggler{
-    @media only screen and (max-width: 767px){
-      display: inline;
-      position: absolute;
-      max-width: 3rem;
-      top:20px;
-      right:20px;
-      &:hover, &:focus, &:active{
-        @include button-actions;
-      }
-      navbar-toggler-icon{
-        align-self: center;
-      }
+  .search{
+    mat-form-field{
+      width: 80%;
     }
-    @media only screen and (min-width: 768px){
-      display: none;
+    button{
+      width: 20%;
     }
   }
-
-  .btn-link {
-    font-size: 18px;
-    color: $main-text-color;
-
-    @media only screen and (max-width: 767px){
-      display: none
+  mat-nav-list > .nav-item{
+    float: right;
+    &:hover, &:active{
+      @include button-actions;
     }
-    &:hover, &:focus, &:active{
+  }
+}
+
+h1.header-brand {
+  color: $main-color;
+  cursor: pointer;
+  font-size: 2rem;
+}
+
+.sidenav-container {
+  /* When the sidenav is not fixed, stretch the sidenav container to fill the available space. This
+     causes `<mat-sidenav-content>` to act as our scrolling element for desktop layouts. */
+  flex: 1;
+  .snav-search{
+    padding: 10px;
+  }
+  #main-app{
+    margin-top: 40px;
+  }
+  .nav-item{
+    &:hover, &:active{
       @include button-actions;
     }
   }
 
-  #navbarOptions{
-    position:relative;
-    top:-250px;
-    width: 90%;
-    margin:auto;
-    display: none;
-    transition: top 1s;
-    .nav-item{
-      width:100%;
-      text-align: center;
-      color: $main-text-color;
-      &:hover, &:focus, &:active{
-        @include button-actions;
-      }
-    }
-  }
-
-  .bwm-search {
-    height: 50px;
-    margin-right: 1px;
-  }
-
-  .btn-bwm-search {
-    border-color: $main-color;
-    color: $main-color;
-    height: 50px;
-    margin-left: 1px;
-
-    &:hover, &:focus, &:active {
-      background-color: $main-color;
-      border-color: $main-color !important;
-      color: $main-text-color !important;
-      box-shadow: none;
-    }
-  }
 }
+
+.header-mobile .sidenav-container {
+  /* When the sidenav is fixed, don't constrain the height of the sidenav container. This allows the
+     `<body>` to be our scrolling element for mobile layouts. */
+  flex: 1 0 auto;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+//
+//
+// .navbar {
+//   margin: 0px 0px 40px 0px;
+//   padding: 15px;
+//   width:100%;
+//
+//   .navbar-brand {
+//     font-size: 30px;
+//     color: $main-color;
+//     font-weight: bold;
+//     cursor: pointer;
+//   }
+//
+//   .navbar-toggler{
+//     @media only screen and (max-width: 767px){
+//       display: inline;
+//       position: absolute;
+//       max-width: 3rem;
+//       top:20px;
+//       right:20px;
+//       &:hover, &:focus, &:active{
+//         @include button-actions;
+//       }
+//       navbar-toggler-icon{
+//         align-self: center;
+//       }
+//     }
+//     @media only screen and (min-width: 768px){
+//       display: none;
+//     }
+//   }
+//
+//   .btn-link {
+//     font-size: 18px;
+//     color: $main-text-color;
+//
+//     @media only screen and (max-width: 767px){
+//       display: none
+//     }
+//     &:hover, &:focus, &:active{
+//       @include button-actions;
+//     }
+//   }
+//
+//   #navbarOptions{
+//     position:relative;
+//     top:-250px;
+//     width: 90%;
+//     margin:auto;
+//     display: none;
+//     transition: top 1s;
+//     .nav-item{
+//       width:100%;
+//       text-align: center;
+//       color: $main-text-color;
+//       &:hover, &:focus, &:active{
+//         @include button-actions;
+//       }
+//     }
+//   }
+//
+//   .bwm-search {
+//     height: 50px;
+//     margin-right: 1px;
+//   }
+//
+//   .btn-bwm-search {
+//     border-color: $main-color;
+//     color: $main-color;
+//     height: 50px;
+//     margin-left: 1px;
+//
+//     &:hover, &:focus, &:active {
+//       background-color: $main-color;
+//       border-color: $main-color !important;
+//       color: $main-text-color !important;
+//       box-shadow: none;
+//     }
+//   }
+// }
