@@ -2,10 +2,20 @@
 
 #rentalDetails {
   .upper-section {
+    @media(max-width: 767.98px){
+      display: flex;
+      flex-direction: column;
+      min-height: 100vw;
+      div{
+        margin: auto;
+        width: 80vw;
+        min-height: 50vw;
+        margin-bottom: 10px;
+      }
+    }
     img {
       width: 100%;
     }
-
     margin-bottom: 30px;
   }
 

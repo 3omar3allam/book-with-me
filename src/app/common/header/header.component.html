@@ -1,25 +1,44 @@
-<nav class="row navbar navbar-expand-lg navbar-light bg-light" id='main-header'>
-  <a class="navbar-brand col-lg-3 col-md-3 col-sm-3 col-8" (click)="refresh()">{{title}}</a>
+<div class="header-container" [class.header-mobile]="mobileQuery.matches">
+  <mat-toolbar class="header-toolbar">
+    <div class="toolbar-section">
+      <h1 class="header-brand" (click)="refresh()">{{title}}</h1>
+    </div>
+    <form class="toolbar-section search" *ngIf="!mobileQuery.matches" action="">
+      <mat-form-field appearance='standard'>
+        <input type='text' matInput placeholder="search...">
+      </mat-form-field>
+      <button mat-raised-button color='warn'>search</button>
+    </form>
+    <mat-nav-list class="toolbar-section" *ngIf="!mobileQuery.matches">
+      <a class="nav-item nav-link active" routerLink="">Login <span class="sr-only">(current)</span></a>
+      <a class="nav-item nav-link" routerLink="">Register</a>
+      <a class="nav-item nav-link disabled" routerLink="" aria-disabled="true">Disabled</a>
+    </mat-nav-list>
+    <a class="toolbar-section" style="cursor:pointer" [hidden]="!mobileQuery.matches" (click)="snav.toggle()">
+      <mat-icon>menu</mat-icon>
+    </a>
 
-  <form class="form-inline mx-auto row col-lg-7 col-md-6 col-sm-7 col-12">
-    <!-- <div class='row'> -->
-      <input class="form-control bwm-search col-8" type="search" placeholder="Search" aria-label="Search">
-      <button class="btn btn-bwm-search col-3" type="submit">Search</button>
-    <!-- </div> -->
-  </form>
+  </mat-toolbar>
 
-  <a class="btn btn-link mr-auto" routerLink="">Login <span class="sr-only">(current)</span></a>
-  <a class="btn btn-link ml-auto" routerLink="">Register</a>
+  <mat-sidenav-container class="sidenav-container"
+                         [style.marginTop.px]="mobileQuery.matches ? 56 : 0">
+    <mat-sidenav #snav
+                 [fixedInViewport]="mobileQuery.matches" fixedTopGap="56">
+      <form class="search snav-search" action="">
+       <mat-form-field appearance='standard'>
+         <input type='text' matInput placeholder="search...">
+       </mat-form-field>
+       <button mat-raised-button color='warn'>search</button>
+      </form>
+      <mat-nav-list>
+        <a class="nav-item nav-link active" routerLink="">Login <span class="sr-only">(current)</span></a>
+        <a class="nav-item nav-link" routerLink="">Register</a>
+        <a class="nav-item nav-link disabled" routerLink="" tabindex="-1" aria-disabled="true">Disabled</a>
+      </mat-nav-list>
+    </mat-sidenav>
 
-  <button class="navbar-toggler ml-auto col-sm-2 col-2"
-    (click)='toggleNav()'>
-    <span class="navbar-toggler-icon"></span>
-  </button>
-
-  <div class='w-100'></div>
-  <div class="navbar-menu ml-auto col-12 col-sm-12 col-md-12" id='navbarOptions'>
-    <a class="nav-item nav-link active" routerLink="">Login <span class="sr-only">(current)</span></a>
-    <a class="nav-item nav-link" routerLink="">Register</a>
-    <a class="nav-item nav-link disabled" routerLink="" tabindex="-1" aria-disabled="true">Disabled</a>
-  </div>
-</nav>
+    <mat-sidenav-content id='main-app'>
+      <router-outlet></router-outlet>
+    </mat-sidenav-content>
+  </mat-sidenav-container>
+</div>

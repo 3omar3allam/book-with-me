@@ -5,15 +5,12 @@
 </div>
 
 <section id="rentalDetails" *ngIf="rental">
-  <div class="upper-section">
-    <div class="row">
-      <div class="col-md-6">
-        <img src="{{rental.image}}" alt="">
-      </div>
-      <div class="col-md-6">
-        <!-- Will be replaced with map !!!! -->
-        <img src="{{rental.image}}" alt="">
-      </div>
+  <div class="upper-section row">
+    <div class="col-md-6" id='image'>
+      <img src="{{rental.image}}" alt="">
+    </div>
+    <div class="col-md-6" id='map'>
+      <bwm-map [address]='rentalAddress'></bwm-map>
     </div>
   </div>
 

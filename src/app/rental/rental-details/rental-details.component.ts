@@ -14,10 +14,12 @@ export class RentalDetailsComponent implements OnInit, OnDestroy {
   rental: Rental;
   rentalByIdSub: Subscription;
   loading: boolean;
+  rentalAddress: string;
 
   constructor(
     private route: ActivatedRoute,
-    private rentalService: RentalService  ) { }
+    private rentalService: RentalService
+  ) { }
 
   ngOnInit() {
     this.loading = true;
@@ -38,6 +40,7 @@ export class RentalDetailsComponent implements OnInit, OnDestroy {
     this.rentalByIdSub = this.rentalService.getRentalById(rentalId).subscribe(
       (rental: Rental) => {
         this.rental = rental;
+        this.rentalAddress = `${rental.street}, ${rental.city}`;
         this.loading = false;
       }
     );
